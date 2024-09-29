@@ -10,12 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 8767321958059325931}
   - component: {fileID: 4103950039310630553}
-  - component: {fileID: 776218780552469132}
-  - component: {fileID: 6051150868333942519}
   - component: {fileID: 2505034785035174003}
-  - component: {fileID: 7201259022642512010}
   - component: {fileID: 7137595805972338395}
   - component: {fileID: 5064315327568379110}
+  - component: {fileID: 7201259022642512010}
+  - component: {fileID: 6051150868333942519}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -32,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 5173581272203786217}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.02, y: 1.34, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -91,36 +90,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &776218780552469132
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5173581272203786217}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c3615b0865c1864b9b29f1384eb98d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _rigidbody: {fileID: 7137595805972338395}
-  _playerConfig: {fileID: 11400000, guid: 0fbe1d5a48428154fbf5aec283edf880, type: 2}
---- !u!114 &6051150868333942519
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5173581272203786217}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b85c4c461affd364e8b2fbb641aa0bd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _config: {fileID: 11400000, guid: 0fbe1d5a48428154fbf5aec283edf880, type: 2}
-  _view: {fileID: 7201259022642512010}
-  _groundChecker: {fileID: 4765868238027642434}
-  _playerController: {fileID: 776218780552469132}
 --- !u!95 &2505034785035174003
 Animator:
   serializedVersion: 5
@@ -142,18 +111,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &7201259022642512010
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5173581272203786217}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f6356f13baacab4c9f0e29980ba2a91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &7137595805972338395
 Rigidbody2D:
   serializedVersion: 4
@@ -213,7 +170,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.00794363, y: 0.005183041}
+  m_Offset: {x: 0.0014042854, y: 0.013362467}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -224,8 +181,34 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7444887, y: 0.49516022}
+  m_Size: {x: 0.7351408, y: 0.47880137}
   m_EdgeRadius: 0
+--- !u!114 &7201259022642512010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5173581272203786217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f6356f13baacab4c9f0e29980ba2a91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6051150868333942519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5173581272203786217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b85c4c461affd364e8b2fbb641aa0bd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _view: {fileID: 7201259022642512010}
+  _groundChecker: {fileID: 4765868238027642434}
 --- !u!1 &8028665114029729050
 GameObject:
   m_ObjectHideFlags: 0

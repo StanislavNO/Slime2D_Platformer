@@ -4,26 +4,27 @@ using Zenject;
 
 namespace Assets.Source.Code
 {
-    [RequireComponent(typeof(CharacterController2D))]
-    public class Player : MonoBehaviour
+    [RequireComponent(typeof(Rigidbody2D))]
+    public class Player : MonoBehaviour, ILootCollector
     {
-        [SerializeField] private PlayerConfig _config;
         [SerializeField] private PlayerView _view;
         [SerializeField] private GroundChecker _groundChecker;
-        [SerializeField] private CharacterController2D _playerController;
 
         private CharacterStateMachine _stateMachine;
 
-        public IInputService Input {get; private set;}
-        public CharacterController2D PlayerController => _playerController;
-        public PlayerConfig Config => _config;
         public PlayerView View => _view;
         public GroundChecker GroundChecker => _groundChecker;
+        public IInputService Input { get; private set; }
+        public PlayerConfig Config { get; private set; }
+        public CharacterController2D PlayerController { get; private set; }
 
         [Inject]
-        private void Construct(IInputService inputService)
+        private void Construct(IInputService inputService, PlayerConfig playerConfig, CharacterController2D controller)
         {
             Input = inputService;
+            Config = playerConfig;
+            PlayerController = controller;
+            PlayerController.Initialize(GetComponent<Rigidbody2D>());
         }
 
         private void Awake()

@@ -6,10 +6,13 @@ namespace Assets.Source.Code
 {
     public class GlobalInstaller : MonoInstaller
     {
+        [SerializeField] private PlayerConfig _playerConfig;
+
         public override void InstallBindings()
         {
             BindInput();
             BindSceneLoader();
+            BindPlayerConfig();
         }
 
         private void BindSceneLoader()
@@ -22,6 +25,9 @@ namespace Assets.Source.Code
             Container.BindInterfacesAndSelfTo<StandaloneInput>().AsSingle();
         }
 
-        
+        private void BindPlayerConfig()
+        {
+            Container.Bind<PlayerConfig>().FromInstance(_playerConfig).AsSingle();
+        }
     }
 }

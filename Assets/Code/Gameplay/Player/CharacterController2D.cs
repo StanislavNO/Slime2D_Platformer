@@ -1,17 +1,25 @@
 ﻿using UnityEngine;
+using Zenject;
 
 namespace Assets.Source.Code
 {
-    public class CharacterController2D : MonoBehaviour
+    public class CharacterController2D 
     {
-        [SerializeField] private Rigidbody2D _rigidbody;
-        [SerializeField] private PlayerConfig _playerConfig;
+        private readonly float _height;
 
-        private float _height;
+        private Rigidbody2D _rigidbody;
+        private Transform _transform;
 
-        private void Awake()
+        [Inject]
+        public CharacterController2D(PlayerConfig playerConfig)
         {
-            _height = _playerConfig.AirborneStateConfig.JumpingStateConfig.MaxHeight;
+            _height = playerConfig.AirborneStateConfig.JumpingStateConfig.MaxHeight;
+        }
+
+        public void Initialize(Rigidbody2D rigidbody)
+        {
+            _rigidbody = rigidbody;
+            _transform = rigidbody.transform;
         }
 
         public void Move(float xVelocity)
@@ -23,7 +31,7 @@ namespace Assets.Source.Code
 
         public void Jump()
         {
-            _rigidbody.AddForce(transform.up * _height, ForceMode2D.Impulse);
+            _rigidbody.AddForce(_transform.up * _height, ForceMode2D.Impulse);
         }
     }
 }

@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2261523123683607706}
   - component: {fileID: 703529595515327656}
-  - component: {fileID: 475576965344479335}
   - component: {fileID: 6946211651388829953}
+  - component: {fileID: 7215873414439821208}
   m_Layer: 0
   m_Name: Medicine
   m_TagString: Untagged
@@ -70,19 +70,6 @@ CircleCollider2D:
   m_Offset: {x: 0.029001176, y: 0.016572148}
   serializedVersion: 2
   m_Radius: 0.35499388
---- !u!114 &475576965344479335
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4019197355498182840}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d16e5f596dd94ee43b3ecb4fe2ddccec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _name: 1
 --- !u!95 &6946211651388829953
 Animator:
   serializedVersion: 5
@@ -96,7 +83,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 23b36cc79ed39634ab5f24a57b4ede71, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -104,6 +91,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7215873414439821208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4019197355498182840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c4fcbe161330bb43a24c45cb86351bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: 1
+  _value: 21
 --- !u!1 &8490283704574219942
 GameObject:
   m_ObjectHideFlags: 0

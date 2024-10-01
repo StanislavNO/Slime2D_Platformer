@@ -16,6 +16,10 @@ namespace Assets.Source.Code
         private void Construct(Player player)
         {
             _target = player.transform;
+        }
+
+        private void Awake()
+        {
             _transform = transform;
             _newPosition = _target.position += _cameraOffset;
         }

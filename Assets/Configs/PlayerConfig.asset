@@ -9,15 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: ba03ec46101c6e64fb30a03aa9d30330, type: 3}
   m_Name: PlayerConfig
-  m_EditorClassIdentifier: Assembly-CSharp:Assets.Source.Code:PlayerConfig
+  m_EditorClassIdentifier: 
   _healthConfig:
     _point: 100
   _runningStateConfig:
-    <Speed>k__BackingField: 2.48
+    <Speed>k__BackingField: 2.61
   _airborneStateConfig:
     _jumpingStateConfig:
-      _maxHeight: 6.33
-      _timeToReachMaxHeight: 1.95
-    _speed: 2.06
+      _maxHeight: 7.06
+      _timeToReachMaxHeight: 2.21
+    _speed: 3.14

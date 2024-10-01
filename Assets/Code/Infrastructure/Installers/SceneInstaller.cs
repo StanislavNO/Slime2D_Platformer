@@ -1,5 +1,4 @@
-﻿using UnityEngine;
-using Zenject;
+﻿using Zenject;
 
 namespace Assets.Source.Code
 {
@@ -7,7 +6,6 @@ namespace Assets.Source.Code
     {
         public override void InstallBindings()
         {
-            
         }
     }
 }

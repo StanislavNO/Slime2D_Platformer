@@ -2,8 +2,6 @@ using UnityEngine;
 
 namespace Assets.Source.Code
 {
-
-    [RequireComponent(typeof(Animator))]
     public class PlayerView : MonoBehaviour
     {
         private const string IsIdling = "IsIdling";
@@ -16,7 +14,7 @@ namespace Assets.Source.Code
 
         private Animator _animator;
 
-        public void Initialize() => _animator = GetComponent<Animator>();
+        public void Initialize(Animator animator) => _animator = animator;
 
         public void StartIdling() => _animator.SetBool(IsIdling, true);
         public void StopIdling() => _animator.SetBool(IsIdling, false);

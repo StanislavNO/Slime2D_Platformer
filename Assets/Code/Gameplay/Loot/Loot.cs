@@ -4,18 +4,14 @@ using UnityEngine;
 namespace Assets.Source.Code
 {
     [RequireComponent(typeof(Collider2D))]
-    public class Loot : MonoBehaviour
+    public abstract class Loot : MonoBehaviour
     {
-        public event Action<LootNames> Collecting;
-
-        [SerializeField] private LootNames _name;
+        public event Action<Loot> Collecting;
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.TryGetComponent(out ILootCollector _))
-            {
-                Collecting?.Invoke(_name);
-            }
+                Collecting?.Invoke(this);
         }
     }
 }

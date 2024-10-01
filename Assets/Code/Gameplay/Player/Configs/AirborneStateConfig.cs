@@ -3,7 +3,6 @@ using UnityEngine;
 
 namespace Assets.Source.Code
 {
-
     [Serializable]
     public class AirborneStateConfig
     {

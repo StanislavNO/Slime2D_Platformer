@@ -6,6 +6,14 @@ namespace Assets.Source.Code
     {
         public override void InstallBindings()
         {
+            BindGameOverManager();
+        }
+
+        private void BindGameOverManager()
+        {
+            Container.BindInterfacesAndSelfTo<GameOverManager>()
+                .AsSingle()
+                .NonLazy();
         }
     }
 }

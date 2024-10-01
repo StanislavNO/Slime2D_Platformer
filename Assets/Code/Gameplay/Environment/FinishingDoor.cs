@@ -1,4 +1,4 @@
-﻿using Assets.Source.Code;
+﻿using Assets.Code.Gameplay.Player;
 using System;
 using UnityEngine;
 
@@ -20,7 +20,7 @@ namespace Assets.Code.Gameplay.Logic
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.TryGetComponent(out Player _))
+            if (collision.TryGetComponent(out IPlayer _))
                 FinishComplied?.Invoke();
         }
 

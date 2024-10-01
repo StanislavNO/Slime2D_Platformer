@@ -1,36 +1,26 @@
-﻿namespace Assets.Source.Code
+﻿using System;
+using Zenject;
+
+namespace Assets.Source.Code
 {
-    public class GameOverManager
+    public class GameOverManager : IDisposable, IInitializable
     {
-        //private readonly Character _character;
-        //private readonly GameSceneManager _sceneManager;
-        //private readonly GameOverDisplay _gameOverDisplay;
+        private readonly SceneLoader _sceneLoader;
+        private readonly IReadOnlyHealth _health;
 
-        //public GameOverManager(Character character, GameSceneManager sceneManager, GameOverDisplay gameOverDisplay)
-        //{
-        //    _character = character;
-        //    _pauseController = pauseController;
-        //    _sceneManager = sceneManager;
-        //    _gameOverDisplay = gameOverDisplay;
+        public GameOverManager(SceneLoader sceneLoader, IReadOnlyHealth health)
+        {
+            _sceneLoader = sceneLoader;
+            _health = health;
+        }
 
-        //    _character.Die += GameOver;
-        //    _gameOverDisplay.RestartButtonClicked += Restart;
-        //}
+        public void Initialize() =>
+            _health.Died += OnPlayerDied;
 
-        //public void Destroy()
-        //{
-        //    _character.Die -= GameOver;
-        //    _gameOverDisplay.RestartButtonClicked -= Restart;
-        //}
+        public void Dispose() =>
+            _health.Died -= OnPlayerDied;
 
-        //private void Restart() =>
-        //    _sceneManager.ReloadCurrentScene();
-
-        //private void GameOver()
-        //{
-        //    _pauseController.Pause();
-        //    _gameOverDisplay.ShowGameOverPanel();
-        //    _gameOverDisplay.ShowScore();
-        //}
+        private void OnPlayerDied() =>
+            _sceneLoader.ReloadCurrentScene();
     }
 }

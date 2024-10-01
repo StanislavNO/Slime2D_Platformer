@@ -15,7 +15,8 @@ GameObject:
   - component: {fileID: 5064315327568379110}
   - component: {fileID: 7201259022642512010}
   - component: {fileID: 6051150868333942519}
-  m_Layer: 0
+  - component: {fileID: 2586013961080392611}
+  m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -207,8 +208,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b85c4c461affd364e8b2fbb641aa0bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _view: {fileID: 7201259022642512010}
-  _groundChecker: {fileID: 4765868238027642434}
+--- !u!114 &2586013961080392611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5173581272203786217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9e8b09c355679c4a85d1e1cab67f1ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8028665114029729050
 GameObject:
   m_ObjectHideFlags: 0
@@ -220,7 +231,7 @@ GameObject:
   - component: {fileID: 2909800908556097828}
   - component: {fileID: 4765868238027642434}
   - component: {fileID: 5202817412576460677}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GraundChecker
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}

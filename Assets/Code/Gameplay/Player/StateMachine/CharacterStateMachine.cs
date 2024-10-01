@@ -24,6 +24,9 @@ namespace Assets.Source.Code
             _currentState.Enter();
         }
 
+        public void OnDestroy() =>
+            _currentState.Exit();
+
         public void SwitchState<T>() where T : IState
         {
             IState state = _states.FirstOrDefault(state => state is T);

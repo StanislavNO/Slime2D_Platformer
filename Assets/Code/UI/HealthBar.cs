@@ -1,7 +1,5 @@
-﻿using Assets.Source.Code;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
-using Zenject;
 
 namespace Assets.Code.UI
 {
@@ -9,7 +7,10 @@ namespace Assets.Code.UI
     {
         [SerializeField] private Slider _slider;
 
-        public void Write(int value, int maxValue)=>
-            _slider.value = (float)value / maxValue;
+        public void Write(int currentHP, int maxHP)
+        {
+            float newValue = (float)currentHP / maxHP;
+            _slider.value = newValue;
+        }
     }
 }

@@ -22,7 +22,7 @@ namespace Assets.Source.Code
 
         private void BindHealth()
         {
-            Container.BindInterfacesTo<Health>().AsSingle();
+            Container.BindInterfacesAndSelfTo<Health>().AsSingle();
         }
 
         private void BindInstantiatePrefab()

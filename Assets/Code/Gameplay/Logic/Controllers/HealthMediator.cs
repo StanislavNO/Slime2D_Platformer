@@ -24,7 +24,7 @@ namespace Assets.Code.Gameplay.Logic.Controllers
         public void Initialize() =>
             _bar.Write(_health.LifePoint, _health.MaxPoint);
 
-        private void OnHealthChanged(int point) =>
-            _bar.Write(point, _health.MaxPoint);
+        private void OnHealthChanged() =>
+            _bar.Write(_health.LifePoint, _health.MaxPoint);
     }
 }

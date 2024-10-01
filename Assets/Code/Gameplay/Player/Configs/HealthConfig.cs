@@ -8,6 +8,6 @@ namespace Assets.Source.Code
     {
         [SerializeField, Range(1, 100)] private int _point;
 
-        public int Point => _point;
+        public int StartPoint => _point;
     }
 }

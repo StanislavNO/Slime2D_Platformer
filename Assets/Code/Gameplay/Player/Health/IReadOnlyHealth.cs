@@ -8,5 +8,6 @@ namespace Assets.Source.Code
         event Action<int> Changed;
 
         int LifePoint { get; }
+        int MaxPoint { get; }
     }
 }

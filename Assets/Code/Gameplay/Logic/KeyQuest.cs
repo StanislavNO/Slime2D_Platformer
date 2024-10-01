@@ -7,11 +7,12 @@ namespace Assets.Code.Gameplay.Logic
     public class KeyQuest : IQuest, IDisposable
     {
         public event Action Complied;
-
-        private readonly int _maxKeys;
+        public event Action Changed;
 
         private List<Key> _keys;
-        private int _collectedKeys;
+
+        public int Target { get; private set; }
+        public int CollectedKeys { get; private set; }
 
         public KeyQuest(List<Key> keys)
         {
@@ -19,8 +20,8 @@ namespace Assets.Code.Gameplay.Logic
                 throw new ArgumentNullException(nameof(keys));
 
             _keys = keys;
-            _collectedKeys = 0;
-            _maxKeys = keys.Count;
+            CollectedKeys = 0;
+            Target = _keys.Count;
 
             Subscribe();
         }
@@ -33,21 +34,22 @@ namespace Assets.Code.Gameplay.Logic
         private void Subscribe()
         {
             foreach (var key in _keys)
-                key.Collecting += CheckExecution;
+                key.Collecting += OnKeyCollecting;
         }
 
         private void Unsubscribe()
         {
             foreach (var key in _keys)
-                key.Collecting -= CheckExecution;
+                key.Collecting -= OnKeyCollecting;
         }
 
-        private void CheckExecution(Loot key)
+        private void OnKeyCollecting(Loot key)
         {
             key.gameObject.SetActive(false);
-            _collectedKeys++;
+            CollectedKeys++;
+            Changed?.Invoke();
 
-            if (_collectedKeys == _maxKeys)
+            if (CollectedKeys == Target)
                 Complied?.Invoke();
         }
     }

@@ -594,6 +594,7 @@ GameObject:
   - component: {fileID: 892559092}
   - component: {fileID: 892559094}
   - component: {fileID: 892559093}
+  - component: {fileID: 892559095}
   m_Layer: 5
   m_Name: QuestBoard
   m_TagString: Untagged
@@ -660,6 +661,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 892559091}
   m_CullTransparentMesh: 1
+--- !u!114 &892559095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 892559091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 791154ac35b86df4e942c22cfc917878, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _score: {fileID: 1081830952}
 --- !u!1 &913493029
 GameObject:
   m_ObjectHideFlags: 0
@@ -2908,6 +2922,7 @@ GameObject:
   - component: {fileID: 1566742800}
   - component: {fileID: 1566742802}
   - component: {fileID: 1566742801}
+  - component: {fileID: 1566742803}
   m_Layer: 0
   m_Name: SceneContext
   m_TagString: Untagged
@@ -2932,6 +2947,7 @@ MonoBehaviour:
   - {fileID: 1566742802}
   - {fileID: 1566742800}
   - {fileID: 1566742801}
+  - {fileID: 1566742803}
   _installerPrefabs: []
   _autoRun: 1
   OnPreInstall:
@@ -3009,6 +3025,19 @@ MonoBehaviour:
   - {fileID: 644195344}
   - {fileID: 1359429543}
   - {fileID: 1087836019}
+--- !u!114 &1566742803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1566742797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07243e1d29122984ea461048656114ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _questDisplay: {fileID: 892559095}
 --- !u!4 &1631467067 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2261523123683607706, guid: 6ade8a18d651cc345ab454be09718d35, type: 3}

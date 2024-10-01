@@ -10,6 +10,7 @@ namespace Assets.Source.Code
         public event Action<int> Changed;
 
         public int LifePoint { get; private set; }
+        public int MaxPoint { get; private set; }
 
         public Health(PlayerConfig playerConfig)
         {

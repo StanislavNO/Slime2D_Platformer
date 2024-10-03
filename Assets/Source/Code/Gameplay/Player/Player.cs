@@ -11,6 +11,7 @@ namespace Assets.Source.Code
         private Health _health;
         private Transform _transform;
 
+        public Rigidbody2D Rigidbody2D { get; private set; }
         public PlayerView View { get; private set; }
         public IInputService Input { get; private set; }
         public PlayerConfig Config { get; private set; }
@@ -29,10 +30,11 @@ namespace Assets.Source.Code
 
         private void Awake()
         {
+            Rigidbody2D = GetComponent<Rigidbody2D>();
             View = GetComponent<PlayerView>();
-            PlayerController.Initialize(GetComponent<Rigidbody2D>());
-            View.Initialize(GetComponent<Animator>());
             GroundChecker = GetComponent<GroundChecker>();
+            View.Initialize(GetComponent<Animator>());
+            PlayerController.Initialize(Rigidbody2D);
             _stateMachine = new CharacterStateMachine(this);
         }
 

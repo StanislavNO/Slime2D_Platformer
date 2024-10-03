@@ -21,10 +21,8 @@ namespace Assets.Source.Code
             Data = data;
         }
 
-
         public virtual void Enter()
         {
-            //Debug.Log(GetType());
             AddInputActionsCallbacks();
         }
 

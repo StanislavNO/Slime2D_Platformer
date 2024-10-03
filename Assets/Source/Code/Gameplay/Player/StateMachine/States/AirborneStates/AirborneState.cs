@@ -5,9 +5,13 @@ namespace Assets.Source.Code
     public class AirborneState : MovementState
     {
         private readonly AirborneStateConfig _config;
+        private readonly Rigidbody2D _player;
 
         public AirborneState(IStateSwitcher stateSwitcher, StateMachineData data, Player character) : base(stateSwitcher, data, character)
-            => _config = character.Config.AirborneStateConfig;
+        {
+            _player = character.Rigidbody2D;
+            _config = character.Config.AirborneStateConfig;
+        }
 
         public override void Enter()
         {
@@ -29,7 +33,8 @@ namespace Assets.Source.Code
         {
             base.Update();
 
-            Data.YVelocity -= _config.BaseGravity * Time.deltaTime;
+            //Data.YVelocity -= _config.BaseGravity * Time.deltaTime;
+            Data.YVelocity = _player.velocity.y;
         }
     }
 }

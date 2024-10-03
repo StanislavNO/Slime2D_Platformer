@@ -37,7 +37,6 @@ namespace Assets.Code.Gameplay.Environment
 
             if (_timeCounter >= _cooldown)
             {
-                Debug.Log("damage");
                 _player.TakeDamage(_damage);
                 _timeCounter = 0;
             }
